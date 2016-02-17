@@ -21,8 +21,16 @@
             "type": "boolean"
         },
         "effective_time_frame": {
-            "description": "This should be only a date time.",
-            "$ref": "#/definitions/time_frame"
+            "allOf": [
+                {
+                    "$ref": "#/definitions/time_frame"
+                },
+                {
+                    "required": [
+                        "date_time"
+                    ]
+                }
+            ]
         }
     },
     "required": [
