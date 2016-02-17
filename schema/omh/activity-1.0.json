@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+
+    "description": "This schema represents the physical activity of a person as computed from AutoSense Chest.",
+
+    "type": "object",
+    "references": [
+        {
+            "description": "The SNOMED code represents Physical activity (observable entity)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/68130003"
+        }
+    ],
+    "definitions": {
+        "time_frame": {
+            "$ref": "time-frame-1.x.json"
+        }
+    },
+    "properties": {
+        "activity_binary": {
+            "description": "If activity above a predetermined threshold then true, otherwise false.",
+            "type": "boolean"
+        },
+        "effective_time_frame": {
+            "description": "This should be only a date time.",
+            "$ref": "#/definitions/time_frame"
+        }
+    },
+    "required": [
+        "activity_binary",
+        "effective_time_frame"
+    ]
+}
