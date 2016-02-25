@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
 
-    "description":"This schema represents the output of a model developed by Kumar et. al. that uses inputs denoting physiological arousal to calculate the probability of a person's being stressed.",
+    "description":"This schema represents the output of a model developed by Kumar et. al. that uses inputs denoting physiological arousal and a threshold to determine whether a person is stressed or not.",
     "type":"object",
     "references": [
         {
@@ -15,8 +15,8 @@
         }
     },
     "properties": {
-        "probability_of_stress_value_set": {
-            "description": "If probability of stress above a predetermined threshold then 0, otherwise 1.",
+        "stress-categorical": {
+            "description": "If probability of stress above a predetermined threshold then 1, otherwise 0.",
             "type": "integer",
             "enum": [
                 0,
@@ -37,7 +37,7 @@
         }
     },
     "required": [
-        "probability_of_stress_value_set",
+        "stress-categorical",
         "effective_time_frame"
     ]
 }

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
 
-    "description": "This schema represents the physical activity of a person as computed from AutoSense Chest.",
+    "description": "This schema represents the result of evaluating activity based on AutoSense and other sensor as a binary variable.",
 
     "type": "object",
     "references": [
@@ -16,9 +16,13 @@
         }
     },
     "properties": {
-        "activity_binary": {
-            "description": "If activity above a predetermined threshold then true, otherwise false.",
-            "type": "boolean"
+        "activity_categorical": {
+            "description": "If probability of stress above a predetermined threshold then 1, otherwise 0.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
         },
         "effective_time_frame": {
             "allOf": [
@@ -34,7 +38,7 @@
         }
     },
     "required": [
-        "activity_binary",
+        "activity_categorical",
         "effective_time_frame"
     ]
 }
