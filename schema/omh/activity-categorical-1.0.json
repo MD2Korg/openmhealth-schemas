@@ -16,8 +16,8 @@
         }
     },
     "properties": {
-        "activity_categorical": {
-            "description": "If probability of stress above a predetermined threshold then 1, otherwise 0.",
+        "activity_category": {
+            "description": "If physical movement above a predetermined threshold then 1, otherwise 0.",
             "type": "integer",
             "enum": [
                 0,
@@ -38,7 +38,7 @@
         }
     },
     "required": [
-        "activity_categorical",
+        "activity_category",
         "effective_time_frame"
     ]
 }

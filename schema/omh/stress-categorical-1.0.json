@@ -15,7 +15,7 @@
         }
     },
     "properties": {
-        "stress-categorical": {
+        "stress_category": {
             "description": "If probability of stress above a predetermined threshold then 1, otherwise 0.",
             "type": "integer",
             "enum": [
@@ -37,7 +37,7 @@
         }
     },
     "required": [
-        "stress-categorical",
+        "stress_category",
         "effective_time_frame"
     ]
 }
