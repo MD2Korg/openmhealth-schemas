@@ -1,0 +1,9 @@
+{
+    "effective_time_frame": {
+        "time_interval": {
+            "start_date_time": "2013-02-05T07:25:00Z",
+            "end_date_time": "2013-02-05T07:33:30Z"
+        }
+    },
+    "threshold": 0.782
+}
