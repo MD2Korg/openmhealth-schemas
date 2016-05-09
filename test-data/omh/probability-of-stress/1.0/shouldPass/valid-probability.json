@@ -1,0 +1,11 @@
+{
+    "probability_of_stress": 0.75,
+    "effective_time_frame": {
+        "date_time": "2013-02-05T07:25:00Z"
+    },
+    "bias": [
+        0.10950458739528258,
+        0.32036235982336242
+    ],
+    "stress_label": "stressed"
+}

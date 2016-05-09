@@ -1,21 +1,25 @@
 {
     "$schema":"http://json-schema.org/draft-04/schema#",
 
-    "description":"This schema represents the output of a model developed by Kumar et. al. that uses inputs denoting physiological arousal to calculate the probability of a person's being stressed.",
+    "description":"This schema represents the output of a model developed by Hovsepian et. al. (UbiComp 2015) that uses inputs denoting physiological arousal to calculate the probability of a person's being stressed.",
     "type":"object",
     "references": [
         {
             "description": "The Psychology Ontology code represents Physiological arousal, defined as Condition of alertness and readiness to respond as evidenced by physiological signs such as heart rate or blood pressure.",
             "url": "http://bioportal.bioontology.org/ontologies/APAONTO?p=classes&conceptid=http%3A%2F%2Fontology.apa.org%2Fapaonto%2FtermsonlyOUT%2520(5).owl%23Physiological_Arousal"
+        },        {
+            "description": "cStress: towards a gold standard for continuous stress assessment in the mobile environment",
+            "url":""
+        },
+        {
+            "description": "Finding Significant Stress Episodes in a Discontinuous Time Series of Rapidly Varying Mobile Sensor Data",
+            "url": "http://dl.acm.org/citation.cfm?id=2858218"
         }
     ],
 
     "definitions": {
         "time_frame": {
             "$ref": "time-frame-1.x.json"
-        },
-        "descriptive_statistic": {
-            "$ref": "descriptive-statistic-1.x.json"
         }
     },
     "properties": {
@@ -25,12 +29,26 @@
         "probability_of_stress": {
             "type": "number"
         },
-        "descriptive_statistic": {
-            "$ref": "#/definitions/descriptive_statistic"
+        "stress_label": {
+            "type": "string",
+            "enum": [
+                "stressed",
+                "not stressed",
+                "unknown"
+            ]
+        },
+        "bias": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
         }
     },
     "required": [
         "probability_of_stress",
-        "effective_time_frame"
+        "effective_time_frame",
+        "stress_label"
     ]
 }
