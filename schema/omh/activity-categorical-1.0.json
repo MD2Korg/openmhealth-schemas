@@ -13,28 +13,60 @@
     "definitions": {
         "time_frame": {
             "$ref": "time-frame-1.x.json"
+        },
+        "category": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "categorical_answer": {
+            "type": "object",
+            "properties": {
+                "answers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/category"
+                    },
+                    "maxItems": 1
+                }
+            }
         }
     },
     "properties": {
         "activity_category": {
-            "description": "If physical movement above a predetermined threshold then 1, otherwise 0.",
-            "type": "integer",
-            "enum": [
-                0,
-                1
+            "allOf": [
+                {
+                    "$ref": "#/definitions/categorical_answer"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "answers": {
+                            "items": {
+                                "enum": [
+                                    {
+                                        "code": 0,
+                                        "value": "no activity"
+                                    },
+                                    {
+                                        "code": 1,
+                                        "value": "activity"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
             ]
         },
         "effective_time_frame": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/time_frame"
-                },
-                {
-                    "required": [
-                        "date_time"
-                    ]
-                }
-            ]
+            "$ref": "#/definitions/time_frame"
         }
     },
     "required": [
