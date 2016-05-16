@@ -10,8 +10,8 @@
         }
     ],
     "definitions": {
-        "time_frame": {
-            "$ref": "time-frame-1.x.json"
+        "date_time": {
+            "$ref": "date-time-1.x.json"
         }
     },
     "properties": {
@@ -24,16 +24,7 @@
             ]
         },
         "effective_time_frame": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/time_frame"
-                },
-                {
-                    "required": [
-                        "date_time"
-                    ]
-                }
-            ]
+            "$ref": "#/definitions/date_time"
         }
     },
     "required": [

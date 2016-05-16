@@ -1,5 +1,8 @@
 {
-    "activity_categorical": 0,
+    "activity_category": {
+        "code": 0,
+        "value": "no activity"
+    },
     "effective_time_frame": {
         "start_date_time": "2013-02-05T07:25:00Z"
     }
