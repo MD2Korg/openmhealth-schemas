@@ -1,7 +1,7 @@
 {
     "$schema":"http://json-schema.org/draft-04/schema#",
 
-    "description":"This schema represents the output of a model developed by Hovsepian et. al. (UbiComp 2015) that uses inputs denoting physiological arousal to calculate the probability of a person's being stressed.",
+    "description":"This schema represents the output of a model developed by Hovsepian et. al. (UbiComp 2015) that uses inputs denoting physiological arousal to find episodes of a person's being stressed.",
     "type":"object",
     "references": [
         {
@@ -21,7 +21,15 @@
     },
     "properties": {
         "effective_time_frame": {
-            "$ref": "#/definitions/time_frame"
+            "description": "As a measure describing a duration, stress episode should not be associated to a date time time frame. Hence, effective time frame is restricted to be a time interval.",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/time_frame"
+                },
+                {
+                    "required": ["time_interval"]
+                }
+            ]
         },
         "threshold": {
             "type": "number"

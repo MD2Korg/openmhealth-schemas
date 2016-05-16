@@ -9,7 +9,7 @@
             "url": "http://bioportal.bioontology.org/ontologies/APAONTO?p=classes&conceptid=http%3A%2F%2Fontology.apa.org%2Fapaonto%2FtermsonlyOUT%2520(5).owl%23Physiological_Arousal"
         },        {
             "description": "cStress: towards a gold standard for continuous stress assessment in the mobile environment",
-            "url":""
+            "url":"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4631393/"
         },
         {
             "description": "Finding Significant Stress Episodes in a Discontinuous Time Series of Rapidly Varying Mobile Sensor Data",
